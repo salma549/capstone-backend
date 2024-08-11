@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 
-import {Box, CssBaseline, Drawer, List, ListItem, ListItemButton, ListItemIcon, Toolbar, useMediaQuery, useTheme} from '@mui/material'
+import {Box, CssBaseline, Drawer, List, ListItem, ListItemButton, ListItemIcon, ListItemText, Toolbar, useMediaQuery, useTheme} from '@mui/material'
 import EmailIcon from '@mui/icons-material/Email';
 import InboxIcon from '@mui/icons-material/Inbox';
 import DashboardIcon from '@mui/icons-material/Dashboard';
@@ -43,6 +43,9 @@ const Admin = () => {
                             <ListItemIcon>
                              {item.icon}
                             </ListItemIcon>
+                            <ListItemText>
+                                {item.name}
+                            </ListItemText>
                         </ListItemButton>
                     </ListItem>)}
                 </List>
@@ -68,6 +71,12 @@ const Admin = () => {
         <CssBaseline/>
         <Drawer
             variant='permanent'
+            sx={{
+                height:"100vh",
+                width:240,
+                flexShrink:0,
+
+            }}
           >
             {drawer}
           </Drawer>
