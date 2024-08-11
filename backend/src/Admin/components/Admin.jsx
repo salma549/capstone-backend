@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 
-import {Box, List, ListItem, ListItemButton, ListItemIcon, Toolbar, useMediaQuery, useTheme} from '@mui/material'
+import {Box, CssBaseline, Drawer, List, ListItem, ListItemButton, ListItemIcon, Toolbar, useMediaQuery, useTheme} from '@mui/material'
 import EmailIcon from '@mui/icons-material/Email';
 import InboxIcon from '@mui/icons-material/Inbox';
 import DashboardIcon from '@mui/icons-material/Dashboard';
@@ -60,9 +60,19 @@ const Admin = () => {
         </Box>
     )
 
+
+
   return (
     <div>
-       Admin
+      <Box sx={{display:`${isLargeScreen} ? "flex":"block"`}}>
+        <CssBaseline/>
+        <Drawer
+            variant='permanent'
+          >
+            {drawer}
+          </Drawer>
+
+      </Box>
     </div>
   )
 }
